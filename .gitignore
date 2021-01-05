@@ -1,4 +1,5 @@
 .vscode
+*.code-workspace
 *.egg-info
 .DS_Store
 *.pyc

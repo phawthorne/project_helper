@@ -1,1 +1,1 @@
-from project_structure.project import *
+from project_helper.project import *

@@ -24,6 +24,10 @@ class Project(object):
         # print(Path(__file__).resolve())
         # print(Path.cwd())
         
+        self.results_folder_name = results_folder_name
+        self.data_folder_name = data_folder_name
+        self.workspace_folder_name = workspace_folder_name
+        
         p = calling_path.resolve()
         l = list(p.parts)
         skipped = 0
@@ -39,13 +43,13 @@ class Project(object):
         return self._project_root
     
     def results_folder(self):
-        return self._project_root / results_folder_name
+        return self._project_root / self.results_folder_name
     
     def workspace_folder(self):
-        return self._project_root / workspace_folder_name
+        return self._project_root / self.workspace_folder_name
     
     def data_folder(self):
-        return self._project_root / data_folder_name
+        return self._project_root / self.data_folder_name
     
     def init_project(self):
         folders = [self.results_folder(), self.workspace_folder(), self.data_folder()]
