@@ -1,5 +1,4 @@
 import sys
-import inspect
 from pathlib import Path
 
 
@@ -20,12 +19,8 @@ class Project(object):
                  scripts_folder_name="scripts"):
         """
         Searches recursively up from calling location to find a folder named
-        `project_root_name`. Will skip `skip` number of such folders. 
+        `project_root_name`. Will skip `to_skip` number of such folders. 
         """
-        # print(inspect.stack())
-        # print(inspect.getfile(sys._getframe(1)))
-        # print(Path(__file__).resolve())
-        # print(Path.cwd())
         
         self.results_folder_name = results_folder_name
         self.data_folder_name = data_folder_name

@@ -37,9 +37,23 @@ from project import project
 
 project.init_project()
 
-save_results(project.results_folder() / "results.csv")
+...
+
+save_results(project.results_folder.joinpath("results.csv"))
 ```
 
 The function **`project.init_project()`** creates folders `data`, `results`, `scripts`, `src`, and `workspace` if they are missing, and adds `src` to `sys.path` so that the modules in `src` can be imported from the various scripts. 
 
 Of course, other scripts can also import `project` from `project.py`, so all the scripts have easy access to project folders through the same `Project` object.
+
+
+### External data folder
+If data is kept in more than one location (e.g. on an external drive), additional attributes can be assigned to `project` in `project.py`:
+```python
+from pathlib import Path
+from project_helper import Project
+
+project = Project(Path.cwd(), "project_dir")
+project.google_drive = "/Volumes/GoogleDrive/Shared drives/Project Name/data"
+project.external_drive = "/Volumes/ExternalSSD/Project Name/data"
+```
