@@ -6,8 +6,9 @@ setup(
     name = "project_helper",
     packages = packages,
     version = "0.0.1",
-    description = "Helper for project paths",
-    long_description = "Helper for project paths",
+    description = "Helper for project paths and some other utilities",
+    long_description = "Helper for project paths and some other utilities",
     author = "Peter L Hawthorne",
-    url = "https://github.com/phawthorne/project_helper"
+    url = "https://github.com/phawthorne/project_helper",
+    install_requires = ['gdal']
 )
