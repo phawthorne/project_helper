@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project_helper"
+version = "0.0.1"
+description = "Helper for project paths and some other utilities"
+readme = "README.md"
+authors = [
+    {name = "Peter L Hawthorne"}
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "gdal>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/phawthorne/project_helper"
+Issues = "https://github.com/phawthorne/project_helper/issues"
+
+[tool.setuptools]
+packages = ["project_helper"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
